@@ -150,3 +150,47 @@ function renderWishlist() {
                     renderWishlist();
                 }
             } );
+
+            clone.querySelector( ".qty-plus").addEventListener("click", () => {
+                product.quantity =(product.quantity || 1) + 1;
+                const wishlist = getWishlist();
+                const index = wishlist.findIndex( item => item.id === product.id );
+                wishlist[index] = product;
+                saveWishlist( wishlist );
+                renderWishlist();
+            } );
+
+        clone.querySelector( ".product-checkbox").dataset.id = product.id;
+        clone.querySelector(".product-checkbox").addEventListener("change", updateSummary );
+        clone.querySelector(".remove-btn" ).addEventListener(  "click", () => removeProduct( product.id ) );
+        clone.querySelector(".add-cart-btn").addEventListener( "click", () => addToCart( product) );
+        wishlistGrid.appendChild( clone );
+    });
+    updateSummary();
+}
+toggleSelectBtn.addEventListener( "click", () => {
+        const checkboxes =
+            document.querySelectorAll( ".product-checkbox" );
+        allSelected = !allSelected;
+        checkboxes.forEach( checkbox => {
+                checkbox.checked = allSelected;
+            } );
+        toggleSelectBtn.textContent = allSelected  ? "Deselect All" : "Select All";
+        updateSummary();
+    } );
+
+function getSelectedIds() {
+    return [ ...document.querySelectorAll(".product-checkbox:checked")]
+    .map( item => Number(item.dataset.id) );
+}
+removeSelectedBtn.addEventListener("click",() => {
+        const selected = getSelectedIds();
+        if(!selected.length){
+            showToast("Select items first");
+            return;
+        }
+        const wishlist = getWishlist().filter( product => !selected.includes( product.id ) );
+        saveWishlist(wishlist);
+        renderWishlist();
+        showToast("Selected items removed" );
+    } );
