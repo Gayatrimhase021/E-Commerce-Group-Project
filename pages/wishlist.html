@@ -94,9 +94,40 @@
             <div class="empty-icon"> ♡</div>
             <h2>Your Wishlist Is Empty</h2>
             <p>Start saving products you love.</p>
-            <a href="products.html"class="empty-btn">Continue Shopping </a>
+            <a href="./../pages/product.html"class="empty-btn">Continue Shopping </a>
         </div>
     </section>
-</div>
+<template id="productTemplate">
+    <article class="wishlist-card">
+        <div class="card-header">
+            <label class="check-wrapper">
+                <input type="checkbox" class="product-checkbox">
+            </label>
+            <button class="remove-btn"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="image-wrapper">
+            <img src=""alt="" class="product-image">
+        </div>
+        <div class="card-body">
+            <h3 class="product-name"> Product </h3>
+            <p class="product-category"> Category </p>
+            <div class="price-row">
+                <span class="product-price">₹0</span>
+                <span class="old-price"> </span>
+            </div>
+            <div class="quantity-row">
+                <button class="qty-minus">-</button>
+                <span class="qty-value">1
+                </span>
+                <button class="qty-plus">+</button>
+            </div>
+            <div class="card-actions">
+                <button class="add-cart-btn">Add To Cart</button>
+            </div>
+        </div>
+    </article>
+</template>
+<div id="toastContainer" class="toast-container"></div>
+<script src="wishlist.js"></script>
 </body>
 </html>
