@@ -27,7 +27,20 @@ header
     object-fit: contain;
     display: block;
 }
+.nav-links a:hover {
+    color: #3b82f6;
+}
 
+.menu-btn {
+    display: none;
+    cursor: pointer;
+}
+
+.menu-btn img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
 .logo a {
     text-decoration: none;
     color: white;
