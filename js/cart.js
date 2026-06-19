@@ -53,7 +53,7 @@ const recommendedProducts = [
         name: "Premium Shirt",
         price: 999,
         oldPrice: 1400,
-        image: "../images/premium shirt.webp"
+        image: "../images/premiumshirt.jpg"
     },
 
     {
@@ -78,13 +78,19 @@ function displayCart() {
 
     cartContainer.innerHTML = "";
 
+   
     if (cart.length === 0) {
 
-        cartContainer.innerHTML =
+        cartContainer.innerHTML = `
+            <div class="empty-cart-box">
+                <h2>🛒 Your Cart is Empty</h2>
+                <p>Add products to continue shopping</p>
 
-            `<div class="empty-cart">
-🛒 Your Cart Is Empty
-</div>`;
+                <a href="../pages/product.html" class="continue-btn">
+                    Continue Shopping
+                </a>
+            </div>
+        `;
 
         updateSummary();
         return;
@@ -183,10 +189,7 @@ addButtons.forEach((button, index) => {
 
         setTimeout(() => {
 
-            button.innerHTML = `
-
-Add To Cart
-`;
+            button.innerHTML = `Add To Cart`;
 
         }, 1500);
 
@@ -199,9 +202,7 @@ function updateSummary() {
     let subtotal = 0;
 
     cart.forEach(item => {
-
         subtotal += item.price;
-
     });
 
     let tax =
@@ -211,9 +212,7 @@ function updateSummary() {
         subtotal + tax - discountAmount;
 
     if (total < 0) {
-
         total = 0;
-
     }
 
     document.getElementById("subtotal")
@@ -227,8 +226,8 @@ function updateSummary() {
 
     document.getElementById("total")
         .innerText = `₹${total}`;
-
 }
+
 document
     .getElementById("applyCoupon")
     .addEventListener("click", () => {
@@ -243,9 +242,7 @@ document
         let subtotal = 0;
 
         cart.forEach(item => {
-
             subtotal += item.price;
-
         });
 
         if (code === "SAVE10") {
@@ -271,7 +268,6 @@ document
             discountAmount = 0;
 
             alert("Invalid Coupon Code");
-
         }
 
         updateSummary();
@@ -283,10 +279,8 @@ document
     .addEventListener("click", () => {
 
         if (cart.length === 0) {
-
             alert("Cart Is Empty");
             return;
-
         }
 
         alert("🎉 Order Placed Successfully");
