@@ -40,3 +40,5 @@ function prevSlide() {
 
     showSlide(currentSlide);
 }
+// Auto Slide
+setInterval(nextSlide, 4000);
