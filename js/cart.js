@@ -179,7 +179,7 @@ addButtons.forEach((button, index) => {
 
         displayCart();
 
-        button.innerHTML = "✓ Added";
+        button.innerHTML = " Added";
 
         setTimeout(() => {
 
@@ -229,7 +229,6 @@ function updateSummary() {
         .innerText = `₹${total}`;
 
 }
-
 document
     .getElementById("applyCoupon")
     .addEventListener("click", () => {
