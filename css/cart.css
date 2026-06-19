@@ -86,14 +86,10 @@ color:#2563eb;
 background:#ef4444;
 color:white;
 border:none;
-padding:12px 18px;
-border-radius:8px;
-cursor:pointer;
-transition:0.3s;
-font-size:15px;
-display:flex;
-align-items:center;
-gap:5px;
+margin:15px 0 20px;
+padding: 10px 25px;
+border-radius:25px;
+cursor: pointer;
 }
 
 .remove-btn:hover{
@@ -143,13 +139,10 @@ transition: 0.3s;
 font-size: 15px;
 }
 .coupon-area button:hover{
-   background-color: #4a7eec;
+  
+background:#1d4ed8;
+transform:scale(1.04);
 }
-
-
-
-
-
 .summary-box h2{
 margin-bottom:20px;
 font-size:24px;
