@@ -298,3 +298,21 @@ header .navbar {
     font-size: 1.3rem;
     margin-bottom: 25px;
 }
+.offer-content button {
+    padding: 14px 35px;
+    border: none;
+    border-radius: 30px;
+    background: white;
+    color: #2563eb;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.offer-content button:hover {
+    background: #2563eb;
+    color: white;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
