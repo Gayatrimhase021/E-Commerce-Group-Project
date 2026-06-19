@@ -168,3 +168,24 @@ header .navbar {
     z-index: 100;
     width: 80%;
 }
+/* constant content on slider */
+.slide-content h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+.slide-content p {
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+}
+
+.slide-content button {
+    padding: 15px 35px;
+    border: none;
+    border-radius: 40px;
+    background: #1877f2;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
