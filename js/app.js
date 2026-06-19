@@ -42,3 +42,8 @@ function prevSlide() {
 }
 // Auto Slide
 setInterval(nextSlide, 4000);
+
+// shop new arrival button
+function openProducts() {
+    window.location.href = "products.html";
+}
